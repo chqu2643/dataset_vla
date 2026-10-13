@@ -47,11 +47,28 @@
       "frames": 273465,
       "tasks": 40,
       "lerobot_codebase_version": "v3.0"
+    },
+    {
+      "name": "Pick Stand R2R",
+      "repo_id": null,
+      "source": null,
+      "revision": "6dc9671bbc52fba58bb7411614e929797e800428",
+      "upstream_last_modified": null,
+      "downloads_at_selection": null,
+      "license": null,
+      "bytes": 1482677918,
+      "files": 577,
+      "episodes": 190,
+      "frames": 237073,
+      "tasks": 2,
+      "lerobot_codebase_version": "v2.1",
+      "origin": "Pre-existing repository dataset reorganized from root data, meta, and videos directories."
     }
   ],
-  "total_bytes": 2013082379,
+  "total_bytes": 3495760297,
   "validation": {
-    "expected_file_count": 475,
-    "method": "Exact size plus upstream LFS SHA-256 (or Git blob SHA-1 for non-LFS files); SHA256SUMS contains a local digest for every vendored source file."
+    "sha256sum_file_count": 475,
+    "sha256sum_scope": "PushT, ALOHA Sim Transfer Cube (Human), and LIBERO",
+    "method": "The three upstream snapshots were checked by exact size plus upstream LFS SHA-256 (or Git blob SHA-1 for non-LFS files); SHA256SUMS contains a local digest for every file in those snapshots. Pick Stand R2R was preserved as existing Git LFS pointers and only reorganized by path."
   }
 }

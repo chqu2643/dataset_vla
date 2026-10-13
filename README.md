@@ -1,7 +1,8 @@
 # dataset_vla
 
-三个常用开源具身 VLA 仿真 benchmark 的固定快照，全部保持官方
-[LeRobot](https://github.com/huggingface/lerobot) v3.0 目录格式。
+四个具身 VLA 数据集，统一存放在 `datasets/` 下。其中三个是常用开源仿真
+benchmark 的固定快照，保持官方 [LeRobot](https://github.com/huggingface/lerobot)
+v3.0 目录格式；`pick_stand_r2r_190` 是仓库原有的 LeRobot v2.1 数据集。
 
 快照日期：2026-10-13。选择时以 Hugging Face 官方 `lerobot` 组织中的下载量作为可复现的使用热度指标，并要求来自三个不同的仿真 benchmark 系列。
 
@@ -10,9 +11,20 @@
 | PushT | [`lerobot/pusht`](https://huggingface.co/datasets/lerobot/pusht) | 206 | 1 | 7.69 MB | 27,847 | MIT |
 | ALOHA Sim Transfer Cube (Human) | [`lerobot/aloha_sim_transfer_cube_human`](https://huggingface.co/datasets/lerobot/aloha_sim_transfer_cube_human) | 50 | 1 | 69.88 MB | 48,659 | MIT |
 | LIBERO | [`lerobot/libero`](https://huggingface.co/datasets/lerobot/libero) | 1,693 | 40 | 1.94 GB | 18,529 | Apache-2.0 |
-| **合计** |  | **1,949** | **42** | **2.013 GB** |  |  |
+| Pick Stand R2R | 仓库原有数据 | 190 | 2 | 1.483 GB | — | 未注明 |
+| **合计** |  | **2,139** | **44** | **3.496 GB** |  |  |
 
-每个数据集均小于 3 GB，合计小于 9 GB。精确字节数、上游 commit 和更新时间见 [`SOURCES.json`](SOURCES.json)。
+每个数据集均小于 3 GB，合计小于 9 GB。精确字节数、已知上游 commit 和更新时间见 [`SOURCES.json`](SOURCES.json)。
+
+目录结构：
+
+```text
+datasets/
+├── aloha_sim_transfer_cube_human/
+├── libero/
+├── pick_stand_r2r_190/
+└── pusht/
+```
 
 ## 获取数据
 
@@ -52,9 +64,14 @@ libero = LeRobotDataset(
     repo_id="lerobot/libero",
     root=repo_root / "datasets" / "libero",
 )
+pick_stand = LeRobotDataset(
+    repo_id="local/pick_stand_r2r_190",
+    root=repo_root / "datasets" / "pick_stand_r2r_190",
+)
 ```
 
-数据目录没有改名或转换；每个目录中的 `meta/info.json`、Parquet 分片和 MP4 分片均来自表中固定的上游 commit。
+前三个 benchmark 没有改名或转换；`pick_stand_r2r_190` 的原有 `data/`、
+`meta/`、`videos/` 目录仅整体移动到同名数据集目录，文件内容未改变。
 
 ## 选择说明
 
@@ -66,4 +83,7 @@ libero = LeRobotDataset(
 
 ## 来源与许可
 
-数据版权与许可仍归各上游项目所有。本仓库不对三个数据集重新授权：PushT 和 ALOHA 数据卡标注 MIT，LIBERO 数据卡标注 Apache-2.0。使用前请阅读各数据集目录内保留的原始 `README.md` 和上游项目条款。
+数据版权与许可仍归各上游项目所有。本仓库不对数据集重新授权：PushT 和
+ALOHA 数据卡标注 MIT，LIBERO 数据卡标注 Apache-2.0；
+`pick_stand_r2r_190` 的来源与许可证尚未注明。使用前请阅读各数据集目录内
+保留的说明和上游项目条款。
