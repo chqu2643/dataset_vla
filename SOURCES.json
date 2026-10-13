@@ -1,0 +1,57 @@
+{
+  "snapshot_date": "2026-10-13",
+  "selection_metric": "Hugging Face downloads, restricted to three distinct open simulation benchmark families in the official lerobot organization",
+  "size_unit": "bytes",
+  "datasets": [
+    {
+      "name": "PushT",
+      "repo_id": "lerobot/pusht",
+      "source": "https://huggingface.co/datasets/lerobot/pusht",
+      "revision": "7628202a2180972f291ba1bc6723834921e72c19",
+      "upstream_last_modified": "2025-09-27T11:40:03.000Z",
+      "downloads_at_selection": 27847,
+      "license": "MIT",
+      "bytes": 7686801,
+      "files": 8,
+      "episodes": 206,
+      "frames": 25650,
+      "tasks": 1,
+      "lerobot_codebase_version": "v3.0"
+    },
+    {
+      "name": "ALOHA Sim Transfer Cube (Human)",
+      "repo_id": "lerobot/aloha_sim_transfer_cube_human",
+      "source": "https://huggingface.co/datasets/lerobot/aloha_sim_transfer_cube_human",
+      "revision": "6a43d500f101255823a9d2b9dc244eeb01a2cd31",
+      "upstream_last_modified": "2026-06-08T17:00:42.000Z",
+      "downloads_at_selection": 48659,
+      "license": "MIT",
+      "bytes": 69883518,
+      "files": 10,
+      "episodes": 50,
+      "frames": 20000,
+      "tasks": 1,
+      "lerobot_codebase_version": "v3.0"
+    },
+    {
+      "name": "LIBERO",
+      "repo_id": "lerobot/libero",
+      "source": "https://huggingface.co/datasets/lerobot/libero",
+      "revision": "a1aaacb7f6cd6ee5fb43120f673cebb0cfea7dd4",
+      "upstream_last_modified": "2026-06-08T19:44:37.000Z",
+      "downloads_at_selection": 18529,
+      "license": "Apache-2.0",
+      "bytes": 1935512060,
+      "files": 457,
+      "episodes": 1693,
+      "frames": 273465,
+      "tasks": 40,
+      "lerobot_codebase_version": "v3.0"
+    }
+  ],
+  "total_bytes": 2013082379,
+  "validation": {
+    "expected_file_count": 475,
+    "method": "Exact size plus upstream LFS SHA-256 (or Git blob SHA-1 for non-LFS files); SHA256SUMS contains a local digest for every vendored source file."
+  }
+}
